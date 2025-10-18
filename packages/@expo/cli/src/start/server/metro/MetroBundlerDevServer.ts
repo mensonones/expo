@@ -1080,6 +1080,7 @@ export class MetroBundlerDevServer extends BundlerDevServer {
       {
         isExporting: !!options.isExporting,
         exp,
+        hostType: options.location?.hostType,
       }
     );
 

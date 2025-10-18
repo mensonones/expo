@@ -12,6 +12,7 @@
 
 ### 🐛 Bug fixes
 
+- Pass `hostType` to Metro server for proper network binding ([#40465](https://github.com/expo/expo/pull/40465) by [@mensonones](https://github.com/mensonones))
 - fix launching apps on Android emulators where `hw.keyboard = no` ([#34677](https://github.com/expo/expo/pull/34677) by [@DimitarNestorov](https://github.com/DimitarNestorov))
 - only skip dependency validation for `EXPO_NO_DEPENDENCY_VALIDATION=1` ([#40043](https://github.com/expo/expo/pull/40043) by [@kitten](https://github.com/kitten))
 - Prevent externals logic from being applied to unreachable Node modules ([#40247](https://github.com/expo/expo/pull/40247) by [@kitten](https://github.com/kitten))

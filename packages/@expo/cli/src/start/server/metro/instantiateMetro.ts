@@ -183,7 +183,8 @@ export async function instantiateMetroAsync(
     exp = getConfig(metroBundler.projectRoot, {
       skipSDKVersionRequirement: true,
     }).exp,
-  }: { isExporting: boolean; exp?: ExpoConfig }
+    hostType,
+  }: { isExporting: boolean; exp?: ExpoConfig; hostType?: 'localhost' | 'lan' | 'tunnel' }
 ): Promise<{
   metro: MetroServer;
   hmrServer: MetroHmrServer<MetroHmrClient> | null;
@@ -255,6 +256,7 @@ export async function instantiateMetroAsync(
         ...createDevToolsPluginWebsocketEndpoint(),
       },
       watch: !isExporting && isWatchEnabled(),
+      host: hostType === 'localhost' ? 'localhost' : undefined,
     },
     {
       mockServer: isExporting,
